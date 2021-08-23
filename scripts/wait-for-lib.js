@@ -1,9 +1,7 @@
 const fs = require('fs');
 
-((path) => {
+function waitLib(path) {
   console.log(`Ждём создание папки ${path}...`);
-  if (!fs.existsSync(path)) setTimeout(() => waitFor(path), 1000);
-  fs.ex;
-})('./dist/my-lib');
-
-
+  if (!fs.existsSync(path)) setTimeout(() => waitLib(path), 1000);
+}
+waitLib('./dist/my-lib');
